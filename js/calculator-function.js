@@ -36,6 +36,7 @@ window.onload = function() {
         screen.innerHTML = "0";
     })
     del.addEventListener("click", function(){
+        //Going to add a bit here to make sure that we can't delete past the base of 0.
         let screen = document.getElementsByClassName("screen")[0];
         screen.innerHTML = screen.innerHTML.substring(0, screen.innerHTML.length-1);
     })
