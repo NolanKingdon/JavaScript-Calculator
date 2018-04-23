@@ -34,7 +34,7 @@
     padding: 10px;
     display: grid;
 /*    Look to add another column for better button orientation*/
-    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
     grid-auto-rows: minmax(10px, auto);
     background: #515552;
     grid-gap: 1em;
@@ -56,20 +56,48 @@ button {
 
 button:hover {
 /*Stopped here*/
-    border-radius: 5px;
-    box-shadow: 1px solid;
     background: #a5a5a5;
+    transition: 0.3s;
+
 }
 
 button:active {
-    background: #c9c9c9;
+    background: #8c8c8c;
     box-shadow: 0 2px #000;
     transform: translateY(4px);
+    transition: 0.01s;
 }
 
 /*See notes on 45, and 36 -- This would probably be better if I made the class names a bit better -- Or maybe make an ID I can pull from*/
-#clear, #del, #equals {
+#equals {
 /*Going to add some distinguishing features in here some time*/
 /*    background-color:red;*/
+    grid-column: 4;
+    grid-row: 4/6;
+}
+
+#clear, #equals, #del{
+    background: #d87d06;
+}
+
+#clear:hover, #equals:hover, #del:hover {
+    background: #a86206;
+}
+
+#clear:active, #equals:active, #del:active {
+    background: #844e07;
+}
+
+.nonnum {
+    background: #2e2a99;
+    border: 1px solid black;
+    color: white;
+}
+.nonnum:hover {
+    background: #232070;
+    color: white;
+}
+.nonnum:active {
+    background: #12113a;
     
 }
