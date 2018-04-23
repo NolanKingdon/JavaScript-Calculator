@@ -6,7 +6,7 @@ window.onload = function() {
     var clear = document.getElementById("clear");
     
     //Even Listeners for our numbers/main operators that can run in the eval()
-    for(var i = 0; i<numButtons.length-1; i++){
+    for(var i = 0; i<numButtons.length; i++){
         numButtons[i].addEventListener("click", function() {
             let screenFirst = document.getElementsByClassName("screen")[0];
             //If the first item on the screen is a 0, we remove it
@@ -14,6 +14,7 @@ window.onload = function() {
                 document.getElementsByClassName("screen")[0].innerHTML = this.value;
                 //otherwise, we concat to the actual screen
             } else if (screenFirst.innerHTML !== "0") {
+                console.log(this.value);
                 document.getElementsByClassName("screen")[0].innerHTML += this.value;
             }
             
