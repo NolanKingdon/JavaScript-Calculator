@@ -8,15 +8,25 @@ window.onload = function() {
     //Even Listeners for our numbers/main operators that can run in the eval()
     for(var i = 0; i<numButtons.length-1; i++){
         numButtons[i].addEventListener("click", function() {
-            let screenFirst = document.getElementsByClassName("screen")[0].innerHTML;
+            let screenFirst = document.getElementsByClassName("screen")[0];
             //If the first item on the screen is a 0, we remove it
-            if(screenFirst === "0") {
+            if(screenFirst.innerHTML === "0") {
                 document.getElementsByClassName("screen")[0].innerHTML = this.value;
                 //otherwise, we concat to the actual screen
-            } else if (screenFirst !== "0") {
+            } else if (screenFirst.innerHTML !== "0") {
                 document.getElementsByClassName("screen")[0].innerHTML += this.value;
-                console.log(this.value);
-            }    
+            }
+            
+            //Making sure there isn't unreasonable overflow on the numbers
+            if(screenFirst.innerHTML.length < 11){
+                screenFirst.style.fontSize = "5em";
+            }
+            if(screenFirst.innerHTML.length > 11){
+                screenFirst.style.fontSize = "3rem";
+            } 
+            if (screenFirst.innerHTML.length > 22){
+                screenFirst.style.fontSize = "2rem";
+            }
         })
     }
     
@@ -36,14 +46,13 @@ window.onload = function() {
         screen.innerHTML = "0";
     })
     del.addEventListener("click", function(){
-        //Going to add a bit here to make sure that we can't delete past the base of 0.
         let screen = document.getElementsByClassName("screen")[0];
-        screen.innerHTML = screen.innerHTML.substring(0, screen.innerHTML.length-1);
+        //Making sure we can't erase our starter number
+        if (screen.innerHTML.length > 1){
+            screen.innerHTML = screen.innerHTML.substring(0, screen.innerHTML.length-1);
+        } else if (screen.innerHTML.length <= 1 && screen.innerHTML[0] != "0"){
+            //If we erase all the way back to our first number, then erase that, it will push 0
+            screen.innerHTML = "0";
+        }
     })
 };
-//
-//Next Steps:
-//
-//    fix weird screen widening with large numbers
-//    Style this to look more like an actual calculator
-//    style this to be more pretty

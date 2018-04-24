@@ -6,21 +6,31 @@
     grid-template-rows: minmax(100px, auto);
     min-width: auto;
     max-width: 500px;
+    height: 90vh;
     grid-gap: 1em;
     border: 3px solid;
-    border-radius: 5px;
-    
+    border-radius: 15px;    
+    padding: 5px;
+}
+
+
+.screen {
+    font-family: 'VT323', monospace;
+    background: #C1D5BC;
+    border-radius: 35px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .container .screen {
     font-size: 5em;
     text-align: right;
     padding-right: 1em;
+    padding-top: 4%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: minmax(40px, auto);
-    background: #fff;
-    
 }
 
 .button {
@@ -28,23 +38,40 @@
     padding: 10px;
     display: grid;
     grid-template-columns: 3fr 3fr 3fr;
+/*    Make more mobile responsive without messing up the screen*/
     grid-auto-rows: 100px;
-    background: #ccc;
+    background: #515552;
     grid-gap: 1em;
+    border-radius: 15px;
 }
 
-.button div {
+
+button {
     border: 1px solid;
     border-radius: 5px;
-    box-shadow: 1px solid;
-    background: #fff;
-    padding-top: 2.5em;
+    box-shadow: 0 5px #000;
+    background: #EDECEA;
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+    cursor: pointer;
+
 }
 
-.button div:hover {
+button:hover {
     border: 2px solid;
     border-radius: 5px;
     box-shadow: 1px solid;
     background: #f0f0f0;
-    padding-top: 2.5em;
+}
+
+button:active {
+    background: #c9c9c9;
+    box-shadow: 0 2px #000;
+    transform: translateY(4px);
+}
+
+#clear, #del, #equals {
+/*Going to add some distinguishing features in here some time*/
+/*    background-color:red;*/
+    
 }
