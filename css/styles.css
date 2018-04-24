@@ -33,7 +33,6 @@
     text-align: center;
     padding: 10px;
     display: grid;
-/*    Look to add another column for better button orientation*/
     grid-template-columns: 3fr 3fr 3fr 3fr;
     grid-auto-rows: minmax(10px, auto);
     background: #515552;
@@ -42,7 +41,6 @@
     
 }
 
-/* Look into having better HTML names so we can have better colouring*/
 button {
     border: 1px solid;
     border-radius: 5px;
@@ -55,7 +53,6 @@ button {
 }
 
 button:hover {
-/*Stopped here*/
     background: #a5a5a5;
     transition: 0.3s;
 
@@ -68,10 +65,7 @@ button:active {
     transition: 0.01s;
 }
 
-/*See notes on 45, and 36 -- This would probably be better if I made the class names a bit better -- Or maybe make an ID I can pull from*/
 #equals {
-/*Going to add some distinguishing features in here some time*/
-/*    background-color:red;*/
     grid-column: 4;
     grid-row: 4/6;
 }
