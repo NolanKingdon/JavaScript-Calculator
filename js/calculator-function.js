@@ -14,7 +14,6 @@ window.onload = function() {
                 document.getElementsByClassName("screen")[0].innerHTML = this.value;
                 //otherwise, we concat to the actual screen
             } else if (screenFirst.innerHTML !== "0") {
-                console.log(this.value);
                 document.getElementsByClassName("screen")[0].innerHTML += this.value;
             }
             
