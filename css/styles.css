@@ -6,7 +6,7 @@
     grid-template-rows: minmax(100px, 150px);
     min-width: auto;
     max-width: 500px;
-    height: 90vh;
+    height: 30vh;
     grid-gap: 1em;
     border: 3px solid;
     border-radius: 15px;    
